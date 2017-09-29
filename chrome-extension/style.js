@@ -36,11 +36,25 @@ var refreshStyles = function() {
 };
 
 var changeIcons = function() {
-    Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
-        if (use.href.baseVal.indexOf("inverse") === -1 && use.href.baseVal.indexOf("product") > -1) {
-            use.href.baseVal += "-inverse";
-        }
-    });
+    if (toggleState) {
+        // add inverse
+        Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
+            if (use.href.baseVal.indexOf("inverse") === -1 && use.href.baseVal.indexOf("product") > -1) {
+                use.href.baseVal += "-inverse";
+            }
+        });
+    } else {
+        // remove inverse
+        console.log(toggleState);
+        Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
+            if (use.href.baseVal.indexOf("inverse") > -1 && use.href.baseVal.indexOf("product") > -1) {
+                if (use.parentNode.parentNode.nodeName === "A") {
+                    return;
+                }
+                use.href.baseVal = use.href.baseVal.replace(/-inverse/g, "");
+            }
+        });
+    }
 };
 
 var addStylesOnPage = function() {
