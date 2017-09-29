@@ -29,6 +29,11 @@
   background-color: #494d54;
   border-color: #494d54; }
 
+.button, button {
+  background-color: #494d54;
+  border-color: #494d54;
+  color: #fff; }
+
 .button-stroke {
   color: #fff; }
 
@@ -36,9 +41,15 @@
   color: #fff;
   background-color: transparent; }
 
+.button-danger {
+  color: #fff;
+  background-color: #f33745;
+  border-color: #f33745; }
+
 .button-primary-link {
   background-color: transparent;
-  border-color: transparent; }
+  border-color: transparent;
+  color: #9351e5; }
 
 .button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
   border-color: #fff transparent transparent transparent; }
@@ -55,11 +66,6 @@
   border-color: #494d54; }
   .button-outline:hover, .button.button-stroke:hover {
     background-color: #494d54; }
-
-.button, button {
-  background-color: #494d54;
-  border-color: #494d54;
-  color: #fff; }
 
 .button-link {
   background-color: transparent;

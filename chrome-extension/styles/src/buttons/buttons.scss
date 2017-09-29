@@ -14,6 +14,12 @@
   border-color: $button-stroke-border;
 }
 
+.button, button {
+  background-color: $button-stroke-border;
+  border-color: $button-stroke-border;
+  color: $white;
+}
+
 .button-stroke {
   color: $white;
 }
@@ -23,9 +29,16 @@
   background-color: transparent;
 }
 
+.button-danger {
+  color: #fff;
+  background-color: #f33745;
+  border-color: #f33745;
+}
+
 .button-primary-link {
   background-color: transparent;
   border-color: transparent;
+  color: $purple;
 }
 
 .button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
@@ -53,12 +66,6 @@
   &:hover {
     background-color: $button-stroke-border;
   }
-}
-
-.button, button {
-  background-color: $button-stroke-border;
-  border-color: $button-stroke-border;
-  color: $white;
 }
 
 .button-link {
