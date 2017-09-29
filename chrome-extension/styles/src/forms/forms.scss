@@ -1,23 +1,28 @@
 @import "../variables.scss";
 
 .dark {
-    .form-control-toggle.form-control-toggle-custom .form-control-toggle-indicator {
-        background-color: transparent;
-        border-color: $light-grey;
-      }
+  .form-control-toggle.form-control-toggle-custom .form-control-toggle-indicator {
+    background-color: transparent;
+    border-color: $light-grey;
+  }
 
-      .form-control {
-        background: transparent;
-        border-color: $light-grey;
-        color: $white;
-        
-        input::placeholder {
-          color: $input-placeholder;
-        }
-      }
+  .form-control {
+    background: transparent;
+    border-color: $light-grey;
+    color: $white;
+    
+    input::placeholder {
+      color: $input-placeholder;
+    }
+  }
 
-      .form-control.disabled, .form-control:disabled {
-        background-color: $light-grey;
-        border-color: $light-grey;
-      }
+  .form-control.disabled, .form-control:disabled {
+    background-color: $light-grey;
+    border-color: $light-grey;
+  }
+
+  .form-control:focus {
+    background-color: rgba(147,81,229,.05);
+    border-color: $purple;
+  } 
 }

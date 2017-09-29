@@ -2,27 +2,28 @@
 
 .dark {
     .table th {
-        border-color: $light-grey;
-        color: $white;
-      }
-      
-      .table td {
-        color: $table-color;
-      }
-      
-      .table.table-hover tr:hover td {
-          background-color: $table-hover
-      }
-      
-      .table-cell-link-primary, .table-cell-link-secondary {
-        color: $white;
-      }
-      
-      .table-cell-link-primary:hover, .table-cell-link-secondary:hover {
-        color: $white;
-      }
+      border-color: $light-grey;
+      color: $white;
+    }
+    
+    .table td {
+      border-color: $light-grey;
+      color: $table-color;
+    }
+    
+    .table.table-hover tr:hover td {
+        background-color: $table-hover
+    }
+    
+    .table-cell-link-primary, .table-cell-link-secondary {
+      color: $white;
+    }
+    
+    .table-cell-link-primary:hover, .table-cell-link-secondary:hover {
+      color: $white;
+    }
 
-      .table-simple thead th {
-        color: $white;
-      }
+    .table-simple thead th {
+      color: $white;
+    }
 }

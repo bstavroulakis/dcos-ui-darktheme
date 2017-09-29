@@ -10,6 +10,8 @@
   color: #fff; }
 .dark .multiple-form-modal .multiple-form .multiple-form-left-column {
   box-shadow: inset -1px 0 #3d4149; }
+.dark .modal {
+  background-color: #1b2029; }
 
 .dark .button-outline, .dark .button.button-stroke {
   border-color: #494d54; }
@@ -22,21 +24,25 @@
 .dark .button-stroke .badge, .dark .dropdown-menu li .badge {
   background: #A3A5A9;
   border-color: #A3A5A9; }
-.dark .button {
+.dark .button-stroke {
+  color: #fff; }
+.dark .button-transparent {
   color: #fff; }
 .dark .button.button-dropdown:after, .dark .button.dropdown-toggle:after, .dark .dropdown-toggle.button-split-content .button-split-content-wrapper:after, .dark button.button-dropdown:after, .dark button.dropdown-toggle:after {
   border-color: #fff transparent transparent transparent; }
 .dark .toggle-button + span:before {
   border: 1px solid rgba(255, 255, 255, 0.2); }
-.dark .button, .dark button {
-  background-color: #494d54;
-  border-color: #494d54; }
+.dark .label:not(.button), .dark label:not(.button) {
+  color: #fff; }
 .dark .button-outline, .dark .button.button-stroke {
   color: #fff;
   background-color: transparent;
   border-color: #494d54; }
   .dark .button-outline:hover, .dark .button.button-stroke:hover {
     background-color: #494d54; }
+.dark .button, .dark button {
+  background-color: #494d54;
+  border-color: #494d54; }
 
 .dark .form-control-toggle.form-control-toggle-custom .form-control-toggle-indicator {
   background-color: transparent;
@@ -50,6 +56,12 @@
 .dark .form-control.disabled, .dark .form-control:disabled {
   background-color: #3d4149;
   border-color: #3d4149; }
+.dark .form-control:focus {
+  background-color: rgba(147, 81, 229, 0.05);
+  border-color: #9351e5; }
+
+body.dark {
+  color: #fff; }
 
 .dark #application {
   background-color: #1b2029;
@@ -60,8 +72,15 @@
   color: #E8EAED; }
   .dark .button-link:hover {
     color: #fff; }
+.dark .axis text.current-value.shadow {
+  color: #fff;
+  text-shadow: 0 0 4px #0A0C10, 0 0 4px #0A0C10; }
 .dark .page-header:before {
   background-color: #3d4149; }
+.dark .panel-interactive:hover {
+  box-shadow: 0 0 0 2px #9351e5; }
+.dark .header {
+  background-color: transparent; }
 .dark .sidebar {
   background-color: #0A0C10; }
 .dark .sidebar-menu li {
@@ -71,6 +90,8 @@
 .dark .panel {
   background-color: transparent;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.dark .panel-cell-light {
+  background-color: transparent; }
 .dark .dashboard-health-list .list a {
   color: #fff; }
 .dark .chart .arc path {
@@ -99,12 +120,13 @@
 .dark .badge {
   background-color: #484C53;
   border-color: #484C53;
-  color: #AEB0B4; }
+  color: #A3A5A9; }
 
 .dark .table th {
   border-color: #3d4149;
   color: #fff; }
 .dark .table td {
+  border-color: #3d4149;
   color: #dadde2; }
 .dark .table.table-hover tr:hover td {
   background-color: rgba(255, 255, 255, 0.05); }
