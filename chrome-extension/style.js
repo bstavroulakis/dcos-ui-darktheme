@@ -5,4 +5,10 @@ style.type = 'text/css';
 style.href = chrome.extension.getURL('styles/dist/styles.css');
 (document.head||document.documentElement).appendChild(style);
 
-document.body.className += "dark";
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.dark) {
+        document.body.className = "dark";
+    } else {
+        document.body.className = "";
+    }
+});
