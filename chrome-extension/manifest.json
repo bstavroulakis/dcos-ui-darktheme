@@ -3,6 +3,9 @@
   "name": "DC/OS UI Dark Theme",
   "description": "Dark Theme for DC/OS UI",
   "version": "0.1",
+  "icons": { "16": "main_icon16.png",
+             "48": "main_icon48.png",
+            "128": "main_icon128.png" },
   "browser_action": {
     "default_icon": "off.png",
     "default_title": "icon"
