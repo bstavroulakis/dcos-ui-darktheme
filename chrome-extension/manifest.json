@@ -10,7 +10,7 @@
   },
   "browser_action": {
     "default_icon": "icons/off.png",
-    "default_title": "Disabled"
+    "default_title": "DC/OS Dark Theme"
   },
   "permissions": ["tabs", "cookies", "storage"],
   "content_security_policy":

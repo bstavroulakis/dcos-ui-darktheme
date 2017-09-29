@@ -10,10 +10,8 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
     if (key === storageKey) {
-      if (toggleState !== storageChange.newValue) {
-        refreshIcon();
-      }
       toggleState = storageChange.newValue;
+      refreshIcon();
       break;
     }
   }
@@ -27,8 +25,4 @@ var refreshIcon = function() {
 chrome.browserAction.onClicked.addListener(function(tab) {
   var toggle = !toggleState;
   chrome.storage.sync.set({ [storageKey]: toggle });
-});
-
-chrome.commands.onCommand.addListener(function(command) {
-  console.log('onCommand event: ', command);
 });
