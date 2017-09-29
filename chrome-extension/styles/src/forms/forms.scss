@@ -10,10 +10,10 @@
     background: transparent;
     border-color: $light-grey;
     color: $white;
+  }
     
-    input::placeholder {
-      color: $input-placeholder;
-    }
+  input::placeholder {
+    color: $input-placeholder;
   }
 
   .form-control.disabled, .form-control:disabled {

@@ -21,13 +21,14 @@
 .dark .button-outline.active, .dark .button-outline.selected, .dark .button.button-stroke.active, .dark .button.button-stroke.selected {
   background-color: #494d54;
   border-color: #494d54; }
-.dark .button-stroke .badge, .dark .dropdown-menu li .badge {
-  background: #A3A5A9;
-  border-color: #A3A5A9; }
 .dark .button-stroke {
   color: #fff; }
 .dark .button-transparent {
-  color: #fff; }
+  color: #fff;
+  background-color: transparent; }
+.dark .button-primary-link {
+  background-color: transparent;
+  border-color: transparent; }
 .dark .button.button-dropdown:after, .dark .button.dropdown-toggle:after, .dark .dropdown-toggle.button-split-content .button-split-content-wrapper:after, .dark button.button-dropdown:after, .dark button.dropdown-toggle:after {
   border-color: #fff transparent transparent transparent; }
 .dark .toggle-button + span:before {
@@ -42,7 +43,17 @@
     background-color: #494d54; }
 .dark .button, .dark button {
   background-color: #494d54;
-  border-color: #494d54; }
+  border-color: #494d54;
+  color: #fff; }
+.dark .button-link {
+  background-color: transparent;
+  border-color: transparent; }
+.dark .button-primary {
+  background-color: #9351e5;
+  border-color: #9351e5; }
+.dark .button-success {
+  background-color: #9351e5;
+  border-color: #9351e5; }
 
 .dark .form-control-toggle.form-control-toggle-custom .form-control-toggle-indicator {
   background-color: transparent;
@@ -51,8 +62,8 @@
   background: transparent;
   border-color: #3d4149;
   color: #fff; }
-  .dark .form-control input::placeholder {
-    color: #57585A; }
+.dark input::placeholder {
+  color: #57585A; }
 .dark .form-control.disabled, .dark .form-control:disabled {
   background-color: #3d4149;
   border-color: #3d4149; }
@@ -121,6 +132,12 @@ body.dark {
   background-color: #484C53;
   border-color: #484C53;
   color: #A3A5A9; }
+.dark .user-account-dropdown button {
+  background-color: transparent; }
+.dark code, .dark .code {
+  background-color: transparent; }
+.dark .icon-default-white {
+  background-color: transparent; }
 
 .dark .table th {
   border-color: #3d4149;

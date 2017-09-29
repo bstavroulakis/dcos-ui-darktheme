@@ -114,4 +114,16 @@ body.dark {
     border-color: $badge-color;
     color: $badge-text-color;
   }
+
+  .user-account-dropdown button {
+    background-color: transparent;
+  }
+
+  code, .code {
+    background-color: transparent;
+  }
+
+  .icon-default-white {
+    background-color: transparent;
+  }
 }

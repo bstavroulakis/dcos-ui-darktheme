@@ -15,17 +15,18 @@
       border-color: $button-stroke-border;
     }
 
-    .button-stroke .badge, .dropdown-menu li .badge {
-      background: $badge;
-      border-color: $badge;
-    }
-
     .button-stroke {
       color: $white;
     }
 
     .button-transparent {
       color: $white;
+      background-color: transparent;
+    }
+
+    .button-primary-link {
+      background-color: transparent;
+      border-color: transparent;
     }
 
     .button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
@@ -58,5 +59,21 @@
     .button, button {
       background-color: $button-stroke-border;
       border-color: $button-stroke-border;
+      color: $white;
+    }
+
+    .button-link {
+      background-color: transparent;
+      border-color: transparent;
+    }
+    
+    .button-primary {
+      background-color: $purple;
+      border-color: $purple;
+    }
+
+    .button-success {
+      background-color: $purple;
+      border-color: $purple;
     }
 }
