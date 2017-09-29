@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "DC/OS UI Dark Theme",
+  "description": "Dark Theme for DC/OS UI",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "info.html"
+  },
+  "permissions": ["tabs", "cookies"],
+  "content_security_policy":
+    "script-src 'self' https://www.google.com https://www.gstatic.com; object-src 'self';",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["style.js"]
+    }
+  ],
+  "web_accessible_resources": ["**.html", "**.js"]
+}
