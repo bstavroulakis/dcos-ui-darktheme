@@ -1,0 +1,8 @@
+@import "variables.scss";
+
+.dark {
+    body { 
+        background-color: $dark-grey;
+        color: $white;
+    }   
+}
