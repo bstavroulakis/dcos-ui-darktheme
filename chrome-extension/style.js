@@ -35,6 +35,14 @@ var refreshStyles = function() {
   }
 };
 
+var changeIcons = function() {
+    Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
+        if (use.href.baseVal.indexOf("inverse") === -1 && use.href.baseVal.indexOf("product") > -1) {
+            use.href.baseVal += "-inverse";
+        }
+    });
+};
+
 var addStylesOnPage = function() {
   var style = document.createElement("link");
   style.rel = "stylesheet";
@@ -55,6 +63,10 @@ var firstStateInterval = setInterval(function() {
       loadingCounter++;
     }
   });
+}, 10);
+
+var iconInterval = setInterval(function() {
+    changeIcons();
 }, 10);
 
 function reqListener() {
