@@ -26,7 +26,3 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   var toggle = !toggleState;
   chrome.storage.sync.set({ [storageKey]: toggle });
 });
-
-chrome.commands.onCommand.addListener(function(command) {
-  console.log('onCommand event: ', command);
-});

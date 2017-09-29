@@ -1,11 +1,13 @@
 var toggleState = false;
 var storageKey = "dcos-dark-theme-state";
 var loadingCounter = 0;
+var isDCOS = false;
+var dcosVersion = 0;
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
-    if (key === storageKey) {
+    if (key === storageKey && isDCOS) {
       toggleState = storageChange.newValue;
       refreshStyles();
       break;
@@ -14,9 +16,18 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 });
 
 var refreshStyles = function() {
+  if (!isDCOS) {
+    return;
+  }
+
   if (!document.querySelector("#" + storageKey)) {
     addStylesOnPage();
   }
+
+  if (!document.body) {
+    return;
+  }
+
   if (toggleState) {
     document.body.classList.add("dark");
   } else {
@@ -40,37 +51,20 @@ var firstStateInterval = setInterval(function() {
     if (loadingCounter >= 10) {
       clearInterval(firstStateInterval);
     }
-    console.log(loadingCounter);
-    if (
-      document.querySelector(
-        "[style='height: 0px; overflow: hidden; width: 0px; visibility: hidden;']"
-      )
-    ) {
+    if (document.querySelector("#application")) {
       loadingCounter++;
     }
-})});
+  });
+}, 10);
 
-// trying to swap out the icon with the inverse icons
-// setTimeout(function() {
-//     var header = document.getElementsByClassName("page-header-inner pod");
-//     console.log(header);
+function reqListener() {
+  var dcosMetadata = JSON.parse(this.responseText);
+  dcosVersion = dcosMetadata.version;
+  isDCOS = true;
+}
 
-//     var base = "";
-//     var el = null;
-//     Array.prototype.slice.call(header[0].getElementsByTagName("use")).forEach(function(use) {
-//         if (use.href.baseVal === "#icon-product--services") {
-//             console.log(use);
-//             base = use.href.baseVal;
-//             el = use;
-//         }
-//     });
-
-//     var svgns = "http://www.w3.org/2000/svg";
-//     var xlinkns = "http://www.w3.org/1999/xlink";
-//     var use = document.createElementNS(svgns, "use");
-//     var newUse = document.createElement("use");
-//     newUse.setAttribute("xlink:href", el.href.baseVal + "-inverse");
-
-//     var parent = el.parentNode;
-//     parent.replaceChild(newUse, el);
-// }, 5000);
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "/dcos-metadata/dcos-version.json");
+oReq.ondata = function() {};
+oReq.send();
