@@ -48,5 +48,29 @@ var firstStateInterval = setInterval(function() {
     ) {
       loadingCounter++;
     }
-  });
-}, 10);
+})});
+
+// trying to swap out the icon with the inverse icons
+// setTimeout(function() {
+//     var header = document.getElementsByClassName("page-header-inner pod");
+//     console.log(header);
+
+//     var base = "";
+//     var el = null;
+//     Array.prototype.slice.call(header[0].getElementsByTagName("use")).forEach(function(use) {
+//         if (use.href.baseVal === "#icon-product--services") {
+//             console.log(use);
+//             base = use.href.baseVal;
+//             el = use;
+//         }
+//     });
+
+//     var svgns = "http://www.w3.org/2000/svg";
+//     var xlinkns = "http://www.w3.org/1999/xlink";
+//     var use = document.createElementNS(svgns, "use");
+//     var newUse = document.createElement("use");
+//     newUse.setAttribute("xlink:href", el.href.baseVal + "-inverse");
+
+//     var parent = el.parentNode;
+//     parent.replaceChild(newUse, el);
+// }, 5000);
