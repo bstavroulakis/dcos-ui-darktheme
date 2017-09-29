@@ -18,8 +18,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["style.js"],
-      "run_at": "document_start"
+      "js": ["style.js"]
     }
   ],
   "background": {

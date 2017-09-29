@@ -10,10 +10,8 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
     if (key === storageKey) {
-      if (toggleState !== storageChange.newValue) {
-        refreshIcon();
-      }
       toggleState = storageChange.newValue;
+      refreshIcon();
       break;
     }
   }

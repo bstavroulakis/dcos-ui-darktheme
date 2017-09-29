@@ -5,17 +5,15 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
     if (key === storageKey) {
-      if (toggleState !== storageChange.newValue) {
-        refreshStyles();
-      }
       toggleState = storageChange.newValue;
+      refreshStyles();
       break;
     }
   }
 });
 
 var refreshStyles = function() {
-  if (!document.querySelector("#dcos-dark-style")) {
+  if (!document.querySelector("#" + storageKey)) {
     addStylesOnPage();
   }
   if (toggleState) {
@@ -29,15 +27,22 @@ var addStylesOnPage = function() {
   var style = document.createElement("link");
   style.rel = "stylesheet";
   style.type = "text/css";
-  style.id = "dcos-dark-style";
+  style.id = storageKey;
   style.href = chrome.extension.getURL("styles/dist/styles.css");
   (document.head || document.documentElement).appendChild(style);
 };
 
-document.addEventListener("DOMContentLoaded", function(event) {
+var firstStateInterval = setInterval(function() {
   chrome.storage.sync.get(storageKey, function(obj) {
-    toggleState = obj[storageKey];
-    console.log(toggleState);
     refreshStyles();
+    toggleState = obj[storageKey];
+    if (
+      document.querySelector(
+        "[style='height: 0px; overflow: hidden; width: 0px; visibility: hidden;']"
+      )
+    ) {
+      console.log(firstStateInterval);
+      clearInterval(firstStateInterval);
+    }
   });
-});
+}, 20);
