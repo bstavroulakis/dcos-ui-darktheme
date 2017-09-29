@@ -2,11 +2,16 @@ var toggle = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
   toggle = !toggle;
   if (toggle) {
-    chrome.browserAction.setIcon({ path: "on.png", tabId: tab.id });
-    // chrome.tabs.executeScript(tab.id, {file:"SCRIPT.user.js"});
-    chrome.tabs.executeScript(tab.id, { file: "style.js" });
+    chrome.browserAction.setIcon({ path: "icons/on.png", tabId: tab.id });
   } else {
-    chrome.browserAction.setIcon({ path: "off.png", tabId: tab.id });
-    chrome.tabs.executeScript(tab.id, { file: "style.js" });
+    chrome.browserAction.setIcon({ path: "icons/off.png", tabId: tab.id });
+  }
+});
+
+chrome.tabs.onActivated.addListener(function(tab) {
+  if (toggle) {
+    chrome.browserAction.setIcon({ path: "icons/on.png", tabId: tab.id });
+  } else {
+    chrome.browserAction.setIcon({ path: "icons/off.png", tabId: tab.id });
   }
 });
