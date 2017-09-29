@@ -4,126 +4,124 @@ body.dark {
   color: $white;
 }
 
-.dark {
-  #application { 
-    background-color: $dark-grey;
-    color: $white;
-  }  
+#application { 
+  background-color: $dark-grey;
+  color: $white;
+}  
+
+.breadcrumbs a {
+  color: $white;
+}
+
+.button-link {
+  color: $link-color;
   
-  .breadcrumbs a {
-    color: $white;
-  }
-
-  .button-link {
-    color: $link-color;
-    
-    &:hover {
-        color: $white;
-    }
-  }
-
-  .axis text.current-value.shadow {
-    color: $white;
-    text-shadow: 0 0 4px $almost-black, 0 0 4px $almost-black;
-  }
-    
-  .page-header:before {
-    background-color: $light-grey;
-  }
-
-  .panel-interactive:hover {
-    box-shadow: 0 0 0 2px #9351e5;
-  }
-
-  .header {
-    background-color: transparent;
-  }
-
-  .sidebar {
-      background-color: $almost-black;
-  }
-  
-  .sidebar-menu li {
-      background: transparent;
-  }
-
-  h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
-    color: $white;
-  }
-
-  .panel {
-    background-color: transparent;
-    box-shadow: 0 0 0 1px rgba(255,255,255,.1);
-  }
-
-  .panel-cell-light {
-    background-color: transparent;
-  }
-  
-  .dashboard-health-list .list a {
-    color: $white;
-  }
-  
-  .chart .arc path {
-    stroke: $dark-grey;
-  }
-
-  .task-status-running, .task-status-starting, .text-color-neutral {
-    color: $white;
-  }
-  
-  .menu-tabbed-item-label.active, .menu-tabbed-item-label.selected {
-    color: $white;
-  }
-  
-  .menu-tabbed-item-label {
-    color: $lighter-grey;
-    
-    &:hover {
+  &:hover {
       color: $white;
-    }
   }
+}
+
+.axis text.current-value.shadow {
+  color: $white;
+  text-shadow: 0 0 4px $almost-black, 0 0 4px $almost-black;
+}
   
-  .configuration-map-label {
+.page-header:before {
+  background-color: $light-grey;
+}
+
+.panel-interactive:hover {
+  box-shadow: 0 0 0 2px #9351e5;
+}
+
+.header {
+  background-color: transparent;
+}
+
+.sidebar {
+    background-color: $almost-black;
+}
+
+.sidebar-menu li {
+    background: transparent;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  color: $white;
+}
+
+.panel {
+  background-color: transparent;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1);
+}
+
+.panel-cell-light {
+  background-color: transparent;
+}
+
+.dashboard-health-list .list a {
+  color: $white;
+}
+
+.chart .arc path {
+  stroke: $dark-grey;
+}
+
+.task-status-running, .task-status-starting, .text-color-neutral {
+  color: $white;
+}
+
+.menu-tabbed-item-label.active, .menu-tabbed-item-label.selected {
+  color: $white;
+}
+
+.menu-tabbed-item-label {
+  color: $lighter-grey;
+  
+  &:hover {
     color: $white;
   }
-  
-  .configuration-map-row+.configuration-map-row {
-    border-top-color: $light-grey;
-  }
-  
-  .detail-view-section-heading-primary {
-    border-bottom-color: $light-grey;
-  }
-  
-  .icon.icon-neutral {
-    color: $white;
-  }
+}
 
-  .menu-tabbed-vertical:after {
-    background-color: $light-grey;
-  }
+.configuration-map-label {
+  color: $white;
+}
 
-  dropdown-panel-group>.dropdown-panel {
-    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 3px 10px 0 rgba(0,0,0,.5);
-    background: $dark-grey;
-  }
+.configuration-map-row+.configuration-map-row {
+  border-top-color: $light-grey;
+}
 
-  .badge {
-    background-color: $badge-color;
-    border-color: $badge-color;
-    color: $badge-text-color;
-  }
+.detail-view-section-heading-primary {
+  border-bottom-color: $light-grey;
+}
 
-  .user-account-dropdown button {
-    background-color: transparent;
-  }
+.icon.icon-neutral {
+  color: $white;
+}
 
-  code, .code {
-    background-color: transparent;
-  }
+.menu-tabbed-vertical:after {
+  background-color: $light-grey;
+}
 
-  .icon-default-white {
-    background-color: transparent;
-  }
+dropdown-panel-group>.dropdown-panel {
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 3px 10px 0 rgba(0,0,0,.5);
+  background: $dark-grey;
+}
+
+.badge {
+  background-color: $badge-color;
+  border-color: $badge-color;
+  color: $badge-text-color;
+}
+
+.user-account-dropdown button {
+  background-color: transparent;
+}
+
+code, .code {
+  background-color: transparent;
+}
+
+.icon-default-white {
+  background-color: transparent;
 }

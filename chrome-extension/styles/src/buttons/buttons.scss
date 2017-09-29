@@ -1,79 +1,77 @@
 @import "../variables.scss";
   
-.dark {
-    .button-outline, .button.button-stroke {
-      border-color: $button-stroke-border;
+.button-outline, .button.button-stroke {
+  border-color: $button-stroke-border;
+
+  &:hover {
+    background-color: $light-grey;
+    border-color: $light-grey;
+  }
+}
+
+.button-outline.active, .button-outline.selected, .button.button-stroke.active, .button.button-stroke.selected {
+  background-color: $button-stroke-border;
+  border-color: $button-stroke-border;
+}
+
+.button-stroke {
+  color: $white;
+}
+
+.button-transparent {
+  color: $white;
+  background-color: transparent;
+}
+
+.button-primary-link {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
+  border-color: $white transparent transparent transparent;
+}
+
+.toggle-button+span:before {
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+// .button, button {
+//   background-color: $button-stroke-border;
+//   border-color: $button-stroke-border;
+// }
+
+.label:not(.button), label:not(.button) {
+  color: $white;
+}
+
+.button-outline, .button.button-stroke {
+  color: $white;
+  background-color: transparent;
+  border-color: $button-stroke-border;
   
-      &:hover {
-        background-color: $light-grey;
-        border-color: $light-grey;
-      }
-    }
-    
-    .button-outline.active, .button-outline.selected, .button.button-stroke.active, .button.button-stroke.selected {
-      background-color: $button-stroke-border;
-      border-color: $button-stroke-border;
-    }
+  &:hover {
+    background-color: $button-stroke-border;
+  }
+}
 
-    .button-stroke {
-      color: $white;
-    }
+.button, button {
+  background-color: $button-stroke-border;
+  border-color: $button-stroke-border;
+  color: $white;
+}
 
-    .button-transparent {
-      color: $white;
-      background-color: transparent;
-    }
+.button-link {
+  background-color: transparent;
+  border-color: transparent;
+}
 
-    .button-primary-link {
-      background-color: transparent;
-      border-color: transparent;
-    }
+.button-primary {
+  background-color: $purple;
+  border-color: $purple;
+}
 
-    .button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
-      border-color: $white transparent transparent transparent;
-    }
-
-    .toggle-button+span:before {
-      border: 1px solid rgba(255,255,255,.2);
-    }
-
-    // .button, button {
-    //   background-color: $button-stroke-border;
-    //   border-color: $button-stroke-border;
-    // }
-
-    .label:not(.button), label:not(.button) {
-      color: $white;
-    }
-
-    .button-outline, .button.button-stroke {
-      color: $white;
-      background-color: transparent;
-      border-color: $button-stroke-border;
-      
-      &:hover {
-        background-color: $button-stroke-border;
-      }
-    }
-
-    .button, button {
-      background-color: $button-stroke-border;
-      border-color: $button-stroke-border;
-      color: $white;
-    }
-
-    .button-link {
-      background-color: transparent;
-      border-color: transparent;
-    }
-    
-    .button-primary {
-      background-color: $purple;
-      border-color: $purple;
-    }
-
-    .button-success {
-      background-color: $purple;
-      border-color: $purple;
-    }
+.button-success {
+  background-color: $purple;
+  border-color: $purple;
 }

@@ -1,31 +1,29 @@
 @import "../variables.scss";
 
-.dark {
-    .modal .modal-body, .modal .modal-header {
-        background-color: $dark-grey;
-    }
-      
-    .modal-full-screen-header-title {
-        color: $white;
-    }
-    
-    .modal-full-screen .modal-header {
-        background: $modal-header;
-    }
-
-    .modal .modal-footer {
+.modal .modal-body, .modal .modal-header {
     background-color: $dark-grey;
-    }
-
-    .multiple-form-modal .form-header {
-    color: $white;
-    }
+}
     
-    .multiple-form-modal .multiple-form .multiple-form-left-column {
-        box-shadow: inset -1px 0 $light-grey;
-    }
+.modal-full-screen-header-title {
+    color: $white;
+}
 
-    .modal {
-        background-color: $dark-grey;
-    }
+.modal-full-screen .modal-header {
+    background: $modal-header;
+}
+
+.modal .modal-footer {
+background-color: $dark-grey;
+}
+
+.multiple-form-modal .form-header {
+color: $white;
+}
+
+.multiple-form-modal .multiple-form .multiple-form-left-column {
+    box-shadow: inset -1px 0 $light-grey;
+}
+
+.modal {
+    background-color: $dark-grey;
 }

@@ -28,11 +28,11 @@ var refreshStyles = function() {
     return;
   }
 
-  if (toggleState) {
-    document.body.classList.add("dark");
-  } else {
-    document.body.classList.remove("dark");
-  }
+  // if (toggleState) {
+  //   document.body.classList.add("dark");
+  // } else {
+  //   document.body.classList.remove("dark");
+  // }
 };
 
 var changeIcons = function() {
