@@ -1,5 +1,6 @@
 var toggleState = false;
 var storageKey = "dcos-dark-theme-state";
+var loadingCounter = 0;
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
@@ -36,13 +37,16 @@ var firstStateInterval = setInterval(function() {
   chrome.storage.sync.get(storageKey, function(obj) {
     refreshStyles();
     toggleState = obj[storageKey];
+    if (loadingCounter >= 10) {
+      clearInterval(firstStateInterval);
+    }
+    console.log(loadingCounter);
     if (
       document.querySelector(
         "[style='height: 0px; overflow: hidden; width: 0px; visibility: hidden;']"
       )
     ) {
-      console.log(firstStateInterval);
-      clearInterval(firstStateInterval);
+      loadingCounter++;
     }
   });
-}, 20);
+}, 10);
