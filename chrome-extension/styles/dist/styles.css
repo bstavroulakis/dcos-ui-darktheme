@@ -1,5 +1,118 @@
+.dark .modal .modal-body, .dark .modal .modal-header {
+  background-color: #1b2029; }
+.dark .modal-full-screen-header-title {
+  color: #fff; }
+.dark .modal-full-screen .modal-header {
+  background: #0A0C1C; }
+.dark .modal .modal-footer {
+  background-color: #1b2029; }
+.dark .multiple-form-modal .form-header {
+  color: #fff; }
+.dark .multiple-form-modal .multiple-form .multiple-form-left-column {
+  box-shadow: inset -1px 0 #3d4149; }
+
+.dark .button-outline, .dark .button.button-stroke {
+  border-color: #494d54; }
+  .dark .button-outline:hover, .dark .button.button-stroke:hover {
+    background-color: #3d4149;
+    border-color: #3d4149; }
+.dark .button-outline.active, .dark .button-outline.selected, .dark .button.button-stroke.active, .dark .button.button-stroke.selected {
+  background-color: #494d54;
+  border-color: #494d54; }
+.dark .button-stroke .badge, .dark .dropdown-menu li .badge {
+  background: #A3A5A9;
+  border-color: #A3A5A9; }
+.dark .button {
+  color: #fff; }
+.dark .button.button-dropdown:after, .dark .button.dropdown-toggle:after, .dark .dropdown-toggle.button-split-content .button-split-content-wrapper:after, .dark button.button-dropdown:after, .dark button.dropdown-toggle:after {
+  border-color: #fff transparent transparent transparent; }
+.dark .toggle-button + span:before {
+  border: 1px solid rgba(255, 255, 255, 0.2); }
+.dark .button, .dark button {
+  background-color: #494d54;
+  border-color: #494d54; }
+.dark .button-outline, .dark .button.button-stroke {
+  color: #fff;
+  background-color: transparent;
+  border-color: #494d54; }
+  .dark .button-outline:hover, .dark .button.button-stroke:hover {
+    background-color: #494d54; }
+
+.dark .form-control-toggle.form-control-toggle-custom .form-control-toggle-indicator {
+  background-color: transparent;
+  border-color: #3d4149; }
+.dark .form-control {
+  background: transparent;
+  border-color: #3d4149;
+  color: #fff; }
+  .dark .form-control input::placeholder {
+    color: #57585A; }
+.dark .form-control.disabled, .dark .form-control:disabled {
+  background-color: #3d4149;
+  border-color: #3d4149; }
+
 .dark #application {
   background-color: #1b2029;
+  color: #fff; }
+.dark .breadcrumbs a {
+  color: #fff; }
+.dark .button-link {
+  color: #E8EAED; }
+  .dark .button-link:hover {
+    color: #fff; }
+.dark .page-header:before {
+  background-color: #3d4149; }
+.dark .sidebar {
+  background-color: #0A0C10; }
+.dark .sidebar-menu li {
+  background: transparent; }
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark .h1, .dark .h2, .dark .h3, .dark .h4, .dark .h5, .dark .h6 {
+  color: #fff; }
+.dark .panel {
+  background-color: transparent;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.dark .dashboard-health-list .list a {
+  color: #fff; }
+.dark .chart .arc path {
+  stroke: #1b2029; }
+.dark .task-status-running, .dark .task-status-starting, .dark .text-color-neutral {
+  color: #fff; }
+.dark .menu-tabbed-item-label.active, .dark .menu-tabbed-item-label.selected {
+  color: #fff; }
+.dark .menu-tabbed-item-label {
+  color: #828487; }
+  .dark .menu-tabbed-item-label:hover {
+    color: #fff; }
+.dark .configuration-map-label {
+  color: #fff; }
+.dark .configuration-map-row + .configuration-map-row {
+  border-top-color: #3d4149; }
+.dark .detail-view-section-heading-primary {
+  border-bottom-color: #3d4149; }
+.dark .icon.icon-neutral {
+  color: #fff; }
+.dark .menu-tabbed-vertical:after {
+  background-color: #3d4149; }
+.dark dropdown-panel-group > .dropdown-panel {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+  background: #1b2029; }
+.dark .badge {
+  background-color: #484C53;
+  border-color: #484C53;
+  color: #AEB0B4; }
+
+.dark .table th {
+  border-color: #3d4149;
+  color: #fff; }
+.dark .table td {
+  color: #dadde2; }
+.dark .table.table-hover tr:hover td {
+  background-color: rgba(255, 255, 255, 0.05); }
+.dark .table-cell-link-primary, .dark .table-cell-link-secondary {
+  color: #fff; }
+.dark .table-cell-link-primary:hover, .dark .table-cell-link-secondary:hover {
+  color: #fff; }
+.dark .table-simple thead th {
   color: #fff; }
 
 /*# sourceMappingURL=styles.css.map */

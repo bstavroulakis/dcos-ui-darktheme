@@ -1,0 +1,49 @@
+@import "../variables.scss";
+  
+.dark {
+    .button-outline, .button.button-stroke {
+        border-color: $button-stroke-border;
+    
+        &:hover {
+            background-color: $light-grey;
+            border-color: $light-grey;
+        }
+    }
+    
+    .button-outline.active, .button-outline.selected, .button.button-stroke.active, .button.button-stroke.selected {
+        background-color: $button-stroke-border;
+        border-color: $button-stroke-border;
+    }
+
+    .button-stroke .badge, .dropdown-menu li .badge {
+        background: $badge;
+        border-color: $badge;
+      }
+
+      .button {
+        color: $white;
+      }
+
+      .button.button-dropdown:after, .button.dropdown-toggle:after, .dropdown-toggle.button-split-content .button-split-content-wrapper:after, button.button-dropdown:after, button.dropdown-toggle:after {
+        border-color: $white transparent transparent transparent;
+      }
+
+      .toggle-button+span:before {
+        border: 1px solid rgba(255,255,255,.2);
+    }
+
+    .button, button {
+        background-color: $button-stroke-border;
+        border-color: $button-stroke-border;
+      }
+
+      .button-outline, .button.button-stroke {
+        color: $white;
+        background-color: transparent;
+        border-color: $button-stroke-border;
+        
+        &:hover {
+          background-color: $button-stroke-border;
+        }
+      }
+}
