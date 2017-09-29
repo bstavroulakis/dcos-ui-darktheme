@@ -40,12 +40,7 @@ var firstStateInterval = setInterval(function() {
     if (loadingCounter >= 10) {
       clearInterval(firstStateInterval);
     }
-    console.log(loadingCounter);
-    if (
-      document.querySelector(
-        "[style='height: 0px; overflow: hidden; width: 0px; visibility: hidden;']"
-      )
-    ) {
+    if (document.querySelector("#application")) {
       loadingCounter++;
     }
   });
