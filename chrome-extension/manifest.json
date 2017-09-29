@@ -10,7 +10,7 @@
   },
   "browser_action": {
     "default_icon": "icons/off.png",
-    "default_title": "Dark Theme Disabled"
+    "default_title": "Disabled"
   },
   "permissions": ["tabs", "cookies"],
   "content_security_policy":
