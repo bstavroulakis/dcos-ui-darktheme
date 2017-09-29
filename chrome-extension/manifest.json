@@ -12,7 +12,7 @@
     "default_icon": "icons/off.png",
     "default_title": "Disabled"
   },
-  "permissions": ["tabs", "cookies"],
+  "permissions": ["tabs", "cookies", "storage"],
   "content_security_policy":
     "script-src 'self' https://www.google.com https://www.gstatic.com; object-src 'self';",
   "content_scripts": [
