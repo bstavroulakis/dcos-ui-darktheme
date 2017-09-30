@@ -1,8 +1,9 @@
 var toggleState = false;
 var storageKey = "dcos-dark-theme-state";
 var loadingCounter = 0;
-var isDCOS = false;
+var isDCOS = true;
 var dcosVersion = 0;
+var oReq = new XMLHttpRequest();
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
@@ -16,40 +17,37 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 });
 
 var refreshStyles = function() {
-  if (!isDCOS) {
-    return;
-  }
-
-  if (!document.body) {
+  if (!isDCOS || !document.body) {
     return;
   }
 
   if (toggleState) {
     addStylesOnPage();
-  } else {
-    removeStylesFromPage();    
+    return;
   }
+
+  removeStylesFromPage();    
 };
 
 var changeIcons = function() {
-    if (toggleState) {
-        // add inverse
-        Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
-            if (use.href.baseVal.indexOf("inverse") === -1 && use.href.baseVal.indexOf("product") > -1) {
-                use.href.baseVal += "-inverse";
-            }
-        });
-    } else {
-        // remove inverse
-        Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
-            if (use.href.baseVal.indexOf("inverse") > -1 && use.href.baseVal.indexOf("product") > -1) {
-                if (use.parentNode.parentNode.nodeName === "A") {
-                    return;
-                }
-                use.href.baseVal = use.href.baseVal.replace(/-inverse/g, "");
-            }
-        });
+  if (toggleState) {
+      // add inverse
+      Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
+          if (use.href.baseVal.indexOf("inverse") === -1 && use.href.baseVal.indexOf("product") > -1) {
+              use.href.baseVal += "-inverse";
+          }
+      });
+      return;
+  }
+
+  Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
+    if (use.href.baseVal.indexOf("inverse") > -1 && use.href.baseVal.indexOf("product") > -1) {
+        if (use.parentNode.parentNode.nodeName === "A") {
+            return;
+        }
+        use.href.baseVal = use.href.baseVal.replace(/-inverse/g, "");
     }
+  });
 };
 
 var addStylesOnPage = function() {
@@ -81,18 +79,21 @@ var firstStateInterval = setInterval(function() {
   });
 }, 10);
 
-var iconInterval = setInterval(function() {
-    changeIcons();
-}, 10);
+setInterval(function(){
+  changeIcons();
+}, 100);
 
-function reqListener() {
+function dcosMetadataListener() {
   var dcosMetadata = JSON.parse(this.responseText);
-  dcosVersion = dcosMetadata.version;
+  if (!dcosMetadata || !this.responseText.includes("dcos-image-commit")) {
+    isDCOS = false;
+    return;
+  }
   isDCOS = true;
 }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "/dcos-metadata/dcos-version.json");
-oReq.ondata = function() {};
-oReq.send();
+setTimeout(function(){
+  oReq.addEventListener("load", dcosMetadataListener);
+  oReq.open("GET", "/dcos-metadata/dcos-version.json");
+  oReq.send();
+}, 100);
