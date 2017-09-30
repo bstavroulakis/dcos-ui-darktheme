@@ -1,14 +1,14 @@
 var toggleState = false;
 var storageKey = "dcos-dark-theme-state";
 var loadingCounter = 0;
-var isDCOS = true;
+var isDCOS = false;
 var dcosVersion = 0;
 var oReq = new XMLHttpRequest();
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
   for (key in changes) {
     var storageChange = changes[key];
-    if (key === storageKey && isDCOS) {
+    if (key === storageKey) {
       toggleState = storageChange.newValue;
       refreshStyles();
       break;
@@ -18,6 +18,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
 var refreshStyles = function() {
   if (!isDCOS || !document.body) {
+    removeStylesFromPage();  
     return;
   }
 
@@ -51,6 +52,10 @@ var changeIcons = function() {
 };
 
 var addStylesOnPage = function() {
+  var overrideSheet = document.getElementById(storageKey);
+  if (overrideSheet) {
+    return;
+  }
   var style = document.createElement("link");
   style.rel = "stylesheet";
   style.type = "text/css";
@@ -90,6 +95,7 @@ function dcosMetadataListener() {
     return;
   }
   isDCOS = true;
+  refreshStyles();
 }
 
 setTimeout(function(){
