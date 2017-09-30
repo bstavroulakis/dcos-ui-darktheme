@@ -20,19 +20,15 @@ var refreshStyles = function() {
     return;
   }
 
-  if (!document.querySelector("#" + storageKey)) {
-    addStylesOnPage();
-  }
-
   if (!document.body) {
     return;
   }
 
-  // if (toggleState) {
-  //   document.body.classList.add("dark");
-  // } else {
-  //   document.body.classList.remove("dark");
-  // }
+  if (toggleState) {
+    addStylesOnPage();
+  } else {
+    removeStylesFromPage();    
+  }
 };
 
 var changeIcons = function() {
@@ -45,7 +41,6 @@ var changeIcons = function() {
         });
     } else {
         // remove inverse
-        console.log(toggleState);
         Array.prototype.slice.call(document.getElementsByTagName("use")).forEach(function(use) {
             if (use.href.baseVal.indexOf("inverse") > -1 && use.href.baseVal.indexOf("product") > -1) {
                 if (use.parentNode.parentNode.nodeName === "A") {
@@ -64,6 +59,13 @@ var addStylesOnPage = function() {
   style.id = storageKey;
   style.href = chrome.extension.getURL("styles/dist/styles.css");
   (document.head || document.documentElement).appendChild(style);
+};
+
+var removeStylesFromPage = function() {
+    var overrideSheet = document.getElementById(storageKey);
+    if (overrideSheet) {
+        overrideSheet.parentNode.removeChild(overrideSheet);        
+    }
 };
 
 var firstStateInterval = setInterval(function() {
