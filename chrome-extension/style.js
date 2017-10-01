@@ -1,8 +1,6 @@
 var toggleState = false;
 var storageKey = "dcos-dark-theme-state";
-var loadingCounter = 0;
 var isDCOS = false;
-var dcosVersion = 0;
 var oReq = new XMLHttpRequest();
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
@@ -27,7 +25,7 @@ var refreshStyles = function() {
     return;
   }
 
-  removeStylesFromPage();    
+  removeStylesFromPage();
 };
 
 var changeIcons = function() {
@@ -52,6 +50,10 @@ var changeIcons = function() {
 };
 
 var addStylesOnPage = function() {
+  if (!isDCOS || !toggleState) {
+    removeStylesFromPage(); 
+    return;
+  }
   var overrideSheet = document.getElementById(storageKey);
   if (overrideSheet) {
     return;
@@ -71,35 +73,41 @@ var removeStylesFromPage = function() {
     }
 };
 
-var firstStateInterval = setInterval(function() {
-  chrome.storage.sync.get(storageKey, function(obj) {
-    refreshStyles();
-    toggleState = obj[storageKey];
-    if (loadingCounter >= 10) {
-      clearInterval(firstStateInterval);
-    }
-    if (document.querySelector("#application")) {
-      loadingCounter++;
-    }
-  });
-}, 10);
-
-setInterval(function(){
-  changeIcons();
-}, 100);
-
-function dcosMetadataListener() {
-  var dcosMetadata = JSON.parse(this.responseText);
-  if (!dcosMetadata || !this.responseText.includes("dcos-image-commit")) {
-    isDCOS = false;
+function dcosStateLoaded() {
+  if(!isDCOS){
     return;
   }
-  isDCOS = true;
+
+  setInterval(function(){
+    changeIcons();
+  }, 100);
+
+  chrome.storage.sync.get(storageKey, function(obj) {
+    toggleState = obj[storageKey];
+    refreshStyles();
+  });
+
   refreshStyles();
 }
 
+function dcosMetadataListener() {
+  try{
+    var dcosMetadata = JSON.parse(this.responseText);
+    if (!dcosMetadata || !this.responseText.includes("dcos-image-commit")) {
+      isDCOS = false;
+    }else{
+      isDCOS = true;
+    }
+  }catch(ex){
+    isDCOS = false;
+  }
+  dcosStateLoaded();
+}
+
 setTimeout(function(){
-  oReq.addEventListener("load", dcosMetadataListener);
-  oReq.open("GET", "/dcos-metadata/dcos-version.json");
-  oReq.send();
-}, 100);
+  if(document && document.title && document.title.includes("DC/OS")) {
+    oReq.addEventListener("load", dcosMetadataListener);
+    oReq.open("GET", "/dcos-metadata/dcos-version.json");
+    oReq.send();
+  }
+}, 0);
