@@ -88,7 +88,8 @@
   border-color: #3d4149;
   color: #fff; }
 
-input::placeholder {
+input::placeholder,
+.form-control::placeholder {
   color: #57585A; }
 
 .form-control.disabled, .form-control:disabled {
@@ -197,6 +198,12 @@ pre {
   background-color: transparent;
   color: #828487; }
 
+.status-bar {
+  background-color: #3d4149; }
+
+.status-bar .bar {
+  box-shadow: 1px 0 0 0 #1b2029; }
+
 .table th {
   border-color: #3d4149;
   color: #fff; }
@@ -222,5 +229,8 @@ pre {
 .table td.highlight,
 .table.table-hover tr:hover td.highlight {
   background-color: transparent; }
+
+.table-cell-emphasized {
+  color: inherit; }
 
 /*# sourceMappingURL=styles.css.map */

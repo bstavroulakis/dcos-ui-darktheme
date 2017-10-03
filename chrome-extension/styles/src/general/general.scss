@@ -130,3 +130,11 @@ pre {
   background-color: transparent;
   color: $lighter-grey;
 }
+
+.status-bar {
+  background-color: $light-grey;
+}
+
+.status-bar .bar {
+  box-shadow: 1px 0 0 0 $dark-grey;
+}

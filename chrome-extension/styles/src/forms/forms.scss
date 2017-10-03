@@ -11,7 +11,8 @@
   color: $white;
 }
   
-input::placeholder {
+input::placeholder,
+.form-control::placeholder {
   color: $input-placeholder;
 }
 
