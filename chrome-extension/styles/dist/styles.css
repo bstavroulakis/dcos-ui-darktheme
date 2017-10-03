@@ -193,6 +193,10 @@ code, .code {
 .icon-default-white {
   background-color: transparent; }
 
+pre {
+  background-color: transparent;
+  color: #828487; }
+
 .table th {
   border-color: #3d4149;
   color: #fff; }
@@ -213,5 +217,10 @@ code, .code {
 
 .table-simple thead th {
   color: #fff; }
+
+.table th.highlight,
+.table td.highlight,
+.table.table-hover tr:hover td.highlight {
+  background-color: transparent; }
 
 /*# sourceMappingURL=styles.css.map */
