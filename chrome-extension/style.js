@@ -74,7 +74,7 @@ var addStylesOnPage = function() {
   style.id = storageKey;
   style.href =
     "https://rawgit.com/bstavroulakis/dcos-ui-darktheme/master/chrome-extension/styles/dist/styles.css";
-  (document.head || document.documentElement).appendChild(style);
+  document.body.appendChild(style);
 };
 
 var removeStylesFromPage = function() {
@@ -121,4 +121,4 @@ setTimeout(function() {
     oReq.open("GET", "/dcos-metadata/dcos-version.json");
     oReq.send();
   }
-}, 0);
+}, 100);
