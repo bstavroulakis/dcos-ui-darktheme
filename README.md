@@ -3,7 +3,7 @@
 
 # Mesosphere DC/OS Dark Theme
 
-Chrome exentsion to apply a dark theme to Mesosphere DC/OS UI.
+Chrome extension to apply a dark theme to Mesosphere DC/OS UI.
 
 [Get it in the Chrome Web Store](https://chrome.google.com/webstore/detail/dcos-ui-dark-theme/akmlgmdoblmncjccldgibefkjjhpndcf?hl=en).
 
@@ -12,6 +12,8 @@ Chrome exentsion to apply a dark theme to Mesosphere DC/OS UI.
 <img src="https://user-images.githubusercontent.com/15963/31297814-5953a74e-aa9c-11e7-8d0a-e803f6d47715.png" width="500">
 
 ## Developing
+
+The stylesheet is loaded directly from this repo on [GitHub](https://rawgit.com/bstavroulakis/dcos-ui-darktheme/master/chrome-extension/styles/dist/styles.css). This means changes to the stylesheet can simply be pushed to this GitHub repo, and there is no need to republish the Chrome Extension.
 
 ### Prerequisites
 
